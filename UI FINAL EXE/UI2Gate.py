@@ -3,7 +3,7 @@
 ######################
 
 #pip install requests
-#check cmd for update command
+#revisar si hay que hacer update
 #C:\Users\Alber\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
 
 import urllib.request
@@ -11,10 +11,10 @@ import json
 import math
 import tkinter as tk
 from tkinter import font
-from PIL import Image, ImageTk  # For handling images
-import requests  # To download the image from URL
-from io import BytesIO  # To handle the image as a file-like object
-import webbrowser  # To open Google Maps in the default browser
+from PIL import Image, ImageTk  # Maneja de imagenes
+import requests  # Para conseguir imagen con URL
+from io import BytesIO  
+import webbrowser  # Abrir Maps
 
 
 def fetch_aprs_data_gate(callsign, api_key):
@@ -92,33 +92,33 @@ def open_google_maps():
     
 
 def main():
-    # Create the main window
+    # Ventana principal
     window = tk.Tk()
     window.title("Monitoreo de Dispositivos - Tracker y iGate")
-    window.geometry("600x500")  # Set window size to be larger
+    window.geometry("600x500")  # tamaño de la ventana
 
-    # Define fonts
+    # Definir fonts
     title_font = font.Font(family="Helvetica", size=16, weight="bold")
     label_font = font.Font(family="Helvetica", size=12)
 
-    # Add a main title
+    # Titulo principal
     title_label = tk.Label(window, text="Información de Ubicación", font=title_font, fg="blue")
     title_label.grid(row=0, column=0, columnspan=2, pady=10)
 
-    # Create frames to organize the data for iGate and Tracker
+    # Organizar objetos de iGate y Tracker en un grid
     igate_frame = tk.LabelFrame(window, text="iGate", font=label_font, padx=10, pady=10)
     tracker_frame = tk.LabelFrame(window, text="Tracker", font=label_font, padx=10, pady=10)
 
     igate_frame.grid(row=1, column=0, padx=20, pady=10, sticky="nsew")
     tracker_frame.grid(row=1, column=1, padx=20, pady=10, sticky="nsew")
 
-    # iGate data labels
+    # etiquetas iGate 
     global value1_label, value2_label, igate_name_label
     igate_name_label = tk.Label(igate_frame, text="Dispositivo: " + data_g[2], font=label_font)
     value1_label = tk.Label(igate_frame, text="Latitud iGate: " + str(data_g[0]), font=label_font)
     value2_label = tk.Label(igate_frame, text="Longitud iGate: " + str(data_g[1]), font=label_font)
 
-    # Tracker data labels
+    # etiquetas Tracker 
     global value4_label, value5_label, value6_label, tracker_name_label
     tracker_name_label = tk.Label(tracker_frame, text="Dispositivo: " + data_t[2], font=label_font)
     value4_label = tk.Label(tracker_frame, text="Latitud Tracker: " + str(data_t[0]), font=label_font)
@@ -134,7 +134,7 @@ def main():
     value1_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
     value2_label.grid(row=2, column=0, padx=10, pady=5, sticky="w")
 
-    # Place Tracker labels in the Tracker frame
+    # poner objetos en el grid
     tracker_name_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
     value4_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
     value5_label.grid(row=2, column=0, padx=10, pady=5, sticky="w")
@@ -143,27 +143,27 @@ def main():
     refresh_button = tk.Button(window, text="Refrescar", command=refresh_window, font=label_font, bg="lightgreen")
     refresh_button.grid(row=2, column=0, columnspan=2, pady=20)
 
-    # Load and display the image from a URL at the bottom
-    url = "https://images.creativemarket.com/0.1.0/ps/1363862/4554/2832/m1/fpnw/wm1/world-map-blue-colors-.jpg?1465889604&s=739de0fe71a085f4f6d87f3fe01fd6a1"  # Replace with your image URL
+    # Imagen
+    url = "https://images.creativemarket.com/0.1.0/ps/1363862/4554/2832/m1/fpnw/wm1/world-map-blue-colors-.jpg?1465889604&s=739de0fe71a085f4f6d87f3fe01fd6a1"  
     response = requests.get(url)
     img_data = response.content
-    image = Image.open(BytesIO(img_data))  # Load the image from the response content
-    image = image.resize((400, 100), Image.Resampling.LANCZOS)  # Resize the image to fit
+    image = Image.open(BytesIO(img_data))  
+    image = image.resize((400, 100), Image.Resampling.LANCZOS)  
     photo = ImageTk.PhotoImage(image)
 
     image_label = tk.Label(window, image=photo)
     image_label.grid(row=3, column=0, columnspan=2, pady=10)
 
-    # Keep a reference to the image to avoid it being garbage collected
+    
     image_label.image = photo
 
-    # Button to open Google Maps
+    # Boton para abrir mapa
     map_button = tk.Button(window, text="Abrir tracker y igate en Google Maps", command=open_google_maps, font=label_font, bg="lightblue")
     map_button.grid(row=4, column=0, columnspan=2, pady=10)
 
     distance_value.grid(row=5, column=0, columnspan=2, pady=10)
 
-    # Start the event loop
+    # loop 
     window.mainloop()
 
 if __name__ == "__main__":
