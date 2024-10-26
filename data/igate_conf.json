@@ -1,0 +1,79 @@
+{
+    "callsign": "TiTEC3-10",
+    "wifi": {
+        "AP": [
+          {
+            "ssid": "honor",
+            "password": "dani0707"
+          }
+        ],
+        "autoAP": {
+          "password": "dani0707",
+          "powerOff": 10
+        }
+    },
+    "beacon": {
+        "latitude": 9.8516581,
+        "longitude": -83.9097920,
+        "comment": "LoRa APRS Grupo3 - Taller Integrador II Semestre",
+        "interval": 15,
+        "overlay": "/",
+        "symbol": "[",
+        "path": "WIDE1-1",
+        "sendViaAPRSIS": true,
+        "sendViaRF": true
+    },
+    "digi": {
+        "mode": 0
+    },
+    "tnc": {
+        "enableServer": false,
+        "enableSerial": false,
+        "acceptOwn": false
+    },
+    "aprs_is": {
+        "active": true,
+        "passcode": "12509",
+        "server": "noam.aprs2.net",
+        "port": 14580,
+        "filter": "m/10",
+        "toRF": true
+    },
+    "lora": {
+        "txFreq": 433775000,
+        "rxFreq": 433775000,
+        "spreadingFactor": 12,
+        "signalBandwidth": 125000,
+        "codingRate4": 5,
+        "power": 20,
+        "txActive": true,
+        "rxActive": true
+    },
+    "display": {
+        "alwaysOn": true,
+        "timeout": 4,
+        "turn180": false
+    },
+    "syslog": {
+        "active": false,
+        "server": "192.168.0.100",
+        "port": 514
+    },
+    "bme": {
+		"active": false,
+		"heightCorrection": 0,
+		"temperatureCorrection": 0.0
+	},
+    "ota": {
+        "username": "",
+        "password": ""
+    },
+    "other": {
+        "rememberStationTime": 30,
+        "sendBatteryVoltage": false,
+        "externalVoltageMeasurement": false,
+        "externalVoltagePin": 34,
+        "lowPowerMode": false,
+        "lowVoltageCutOff": 0
+    }
+}
