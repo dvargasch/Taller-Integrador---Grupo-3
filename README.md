@@ -40,9 +40,10 @@ Tambien se encuentran los recursos para la aplicacion 'Monitoreo de Estado de Ca
 
 ## INFO DE PARTICIPANTES
 -Alberto Gonzalez Guardia / alberto@estudiantec.cr
+<br />
 -Daniela Vargas Chavarria / danielavargas0407@estudiantec.cr
+<br />
 -Ivan Campbell Tames / ivancampbell@estudiantec.cr
-
 <br />
 
 ## Taller Integrador - Tecnologico de Costa Rica
