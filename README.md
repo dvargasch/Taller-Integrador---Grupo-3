@@ -39,13 +39,13 @@ Tambien se encuentran los recursos para la aplicacion 'Monitoreo de Estado de Ca
 
 <br />
 
-##INFO DE PARTICIPANTES
+## INFO DE PARTICIPANTES
 -Alberto Gonzalez Guardia / alberto@estudiantec.cr
 -Daniela Vargas Chavarria / danielavargas0407@estudiantec.cr
 -Ivan Campbell Tames / ivancampbell@estudiantec.cr
 
 <br />
+
 ## Taller Integrador - Tecnologico de Costa Rica
 ## Cartago, Costa Rica
-[PresentacionInicial_Integrador.pdf](https://github.com/user-attachments/files/16670489/PresentacionInicial_Integrador.pdf)
 
